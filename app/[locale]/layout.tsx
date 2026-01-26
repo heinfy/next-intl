@@ -1,13 +1,14 @@
 import BaseLayout from '@/components/BaseLayout';
 import { Locale } from '@/i18n/navigation';
 import { locales, routing } from '@/i18n/routing';
+import { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { ReactNode } from 'react';
 
 type Props = {
   children: ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 };
 
 export function generateStaticParams() {
@@ -20,7 +21,7 @@ function isValidLocale(locale: string): locale is Locale {
 
 export async function generateMetadata({
   params
-}: Omit<Props, 'children'>) {
+}: Omit<Props, 'children'>): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'LocaleLayout' });
 
