@@ -1,0 +1,19 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-*: initial;
+  --font-sans: Inter, sans-serif;
+  --font-mono: Monaco, ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, Courier New, monospace;
+  --color-slate-850: hsl(222deg 47% 16%);
+  --color-primary: #5fc3e7;
+}
+
+@utility container {
+  margin-inline: auto;
+  @media (width >= --theme(--breakpoint-sm)) {
+    max-width: none;
+  }
+  @media (width >= 50rem) {
+    max-width: 50rem;
+  }
+}

@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+这是一个 [Next.js](https://nextjs.org) 使用 [create-next-app](https://nextjs.org/docs/app/api-reference/cli/create-next-app) 创建项目
 
-## Getting Started
-
-First, run the development server:
+## 开始
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+打开 [http://localhost:3000](http://localhost:3000) 使用浏览器查看结果。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+此项目使用 [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) 自动优化和加载 [Geist](https://vercel.com/font)，Vercel的新字体系列。
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 国际化
 
-## Learn More
+[next-intl](https://next-intl.dev/) - 支持多种语言，使您的应用程序代码变得更简单而不是更复杂。
 
-To learn more about Next.js, take a look at the following resources:
+- [App Router with i18n routing](https://github.com/amannn/next-intl/tree/main/examples/example-app-router)
+- [DEMO](https://next-intl-example-app-router.vercel.app/en)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 更多
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+要了解有关Next.js的更多信息，请查看以下资源：
 
-## Deploy on Vercel
+- [Next.js Documentation](https://nextjs.org/docs) - Next.js 文档。
+- [Learn Next.js](https://nextjs.org/learn) - Next.js 教程。
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+查看 [Next.js GitHub](https://github.com/vercel/next.js)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 部署 Vercel
+
+部署 Next.js 应用程序到[Vercel](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme)。
+
+查看 [Next.js 部署文档](https://nextjs.org/docs/app/building-your-application/deploying)
