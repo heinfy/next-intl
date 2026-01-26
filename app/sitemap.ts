@@ -1,5 +1,6 @@
 import { host } from '@/app/config';
-import { Locale, getPathname, routing } from '@/i18n/navigation';
+import { Locale, getPathname } from '@/i18n/navigation';
+import { routing } from '@/i18n/routing';
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
