@@ -1,20 +1,25 @@
 import createMiddleware from 'next-intl/middleware';
+import { NextRequest, NextResponse } from 'next/server';
+import { publicPaths } from './i18n/publicPaths';
 import { routing } from './i18n/routing';
 
-export default createMiddleware(routing);
+const handleI18nRouting = createMiddleware(routing);
+
+function isPublicPath(pathname: string) {
+  return publicPaths.some(
+    (path) => pathname === `/${path}` || pathname.startsWith(`/${path}/`)
+  );
+}
+
+export default function proxy(request: NextRequest) {
+  // 公共页面不走 i18n 路由，避免重定向到 /zh/... 等语言路径
+  if (isPublicPath(request.nextUrl.pathname)) {
+    return NextResponse.next();
+  }
+
+  return handleI18nRouting(request);
+}
 
 export const config = {
-  matcher: [
-    // Enable a redirect to a matching locale at the root
-    '/',
-
-    // Set a cookie to remember the previous locale for
-    // all requests that have a locale prefix
-    '/(zh|en|de)/:path*',
-
-    // Match all pathnames except for
-    // - … if they start with `/api`, `/trpc`, `/_next` or `/_vercel`
-    // - … the ones containing a dot (e.g. `favicon.ico`)
-    '/((?!api|trpc|_next|_vercel|.*\\..*).*)'
-  ]
+  matcher: '/((?!api|trpc|_next|_vercel|.*\\..*).*)'
 };

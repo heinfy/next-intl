@@ -14,6 +14,12 @@
     "label": "Sprache ändern",
     "locale": "{locale, select, de {🇩🇪 Deutsch} en {🇺🇸 English} zh {🇨🇳 Chinese} other {Unknown}}"
   },
+  "ThemeSwitcher": {
+    "label": "Design ändern",
+    "light": "Hell",
+    "dark": "Dunkel",
+    "system": "System"
+  },
   "Manifest": {
     "name": ""
   },

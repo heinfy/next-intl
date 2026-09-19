@@ -1,4 +1,5 @@
 import Navigation from '@/components/Navigation';
+import ThemeProvider from '@/components/ThemeProvider';
 import { clsx } from 'clsx';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
@@ -19,14 +20,22 @@ export default async function BaseLayout({ children, locale }: Props) {
 
   return (
     <html
-      className='h-full'
+      className="h-full"
       lang={locale}
+      suppressHydrationWarning
     >
-      <body className={clsx(inter.className, 'flex h-full flex-col', 'bg-gray-100', 'text-gray-800')}>
-        <NextIntlClientProvider messages={messages}>
-          <Navigation />
-          {children}
-        </NextIntlClientProvider>
+      <body
+        className={clsx(
+          inter.className,
+          'flex h-full flex-col bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-100'
+        )}
+      >
+        <ThemeProvider>
+          <NextIntlClientProvider messages={messages}>
+            <Navigation />
+            {children}
+          </NextIntlClientProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

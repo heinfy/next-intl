@@ -18,7 +18,7 @@ export default async function PathnamesPage({ params }: Props) {
         {t.rich('description', {
           p: (chunks) => <p className="mt-4">{chunks}</p>,
           code: (chunks) => (
-            <code className="font-mono text-white">{chunks}</code>
+            <code className="font-mono text-gray-800 dark:text-white">{chunks}</code>
           )
         })}
       </div>

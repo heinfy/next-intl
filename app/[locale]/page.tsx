@@ -17,7 +17,7 @@ export default async function IndexPage({ params }: Props) {
       <p className="max-w-[590px]">
         {t.rich('description', {
           code: (chunks) => (
-            <code className="font-mono text-white">{chunks}</code>
+            <code className="font-mono text-gray-800 dark:text-white">{chunks}</code>
           )
         })}
       </p>

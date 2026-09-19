@@ -13,7 +13,12 @@ export default function NavigationLink({ href, ...rest }: ComponentProps<typeof 
   return (
     <Link
       aria-current={isActive ? 'page' : undefined}
-      className={clsx('inline-block px-2 py-3 transition-colors', isActive ? 'text-white' : 'text-gray-400 hover:text-gray-200')}
+      className={clsx(
+        'inline-block px-2 py-3 transition-colors',
+        isActive
+          ? 'text-gray-900 dark:text-white'
+          : 'text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200'
+      )}
       href={href}
       {...rest}
     />

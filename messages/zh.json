@@ -14,6 +14,12 @@
     "label": "更改语言",
     "locale": "{locale, select, de {🇩🇪 Deutsch} en {🇺🇸 English} zh {🇨🇳 Chinese} other {Unknown}}"
   },
+  "ThemeSwitcher": {
+    "label": "切换主题",
+    "light": "浅色",
+    "dark": "深色",
+    "system": "跟随系统"
+  },
   "Manifest": {
     "name": "next-intl 示例"
   },
