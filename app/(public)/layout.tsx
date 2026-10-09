@@ -1,3 +1,4 @@
+import '../styles.css';
 import ThemeProvider from '@/components/ThemeProvider';
 import { clsx } from 'clsx';
 import { Inter } from 'next/font/google';
@@ -13,8 +14,8 @@ type Props = {
 export default function PublicLayout({ children }: Props) {
   return (
     <html
-      className="h-full"
-      lang="zh"
+      className='h-full'
+      lang='zh'
       suppressHydrationWarning
     >
       <body

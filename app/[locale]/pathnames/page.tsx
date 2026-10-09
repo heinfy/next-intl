@@ -1,25 +1,15 @@
 import PageLayout from '@/components/PageLayout';
-import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { getTranslations } from 'next-intl/server';
 
-type Props = {
-  params: Promise<{ locale: string }>;
-};
-
-export default async function PathnamesPage({ params }: Props) {
-  const { locale } = await params;
-  // Enable static rendering
-  setRequestLocale(locale);
-
+export default async function PathnamesPage() {
   const t = await getTranslations('PathnamesPage');
 
   return (
     <PageLayout title={t('title')}>
-      <div className="max-w-[490px]">
+      <div className='max-w-[490px]'>
         {t.rich('description', {
-          p: (chunks) => <p className="mt-4">{chunks}</p>,
-          code: (chunks) => (
-            <code className="font-mono text-gray-800 dark:text-white">{chunks}</code>
-          )
+          p: chunks => <p className='mt-4'>{chunks}</p>,
+          code: chunks => <code className='font-mono text-gray-800 dark:text-white'>{chunks}</code>,
         })}
       </div>
     </PageLayout>

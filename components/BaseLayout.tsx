@@ -1,3 +1,4 @@
+import '../app/styles.css';
 import Navigation from '@/components/Navigation';
 import ThemeProvider from '@/components/ThemeProvider';
 import { clsx } from 'clsx';
@@ -20,7 +21,7 @@ export default async function BaseLayout({ children, locale }: Props) {
 
   return (
     <html
-      className="h-full"
+      className='h-full'
       lang={locale}
       suppressHydrationWarning
     >

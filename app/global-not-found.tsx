@@ -1,11 +1,9 @@
 import BaseLayout from '@/components/BaseLayout';
 import NotFoundPage from '@/components/NotFoundPage';
 import { routing } from '@/i18n/routing';
+import './styles.css';
 
-// This page renders when a route like `/unknown.txt` is requested.
-// In this case, the layout at `app/[locale]/layout.tsx` receives
-// an invalid value as the `[locale]` param and calls `notFound()`.
-
+// 全局 404：不经过根 layout，需自行引入样式与完整文档结构（由 BaseLayout 提供）
 export default function GlobalNotFound() {
   return (
     <BaseLayout locale={routing.defaultLocale}>
